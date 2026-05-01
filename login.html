@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/style-login.css">
+	<link rel="stylesheet" href="css/style-nav.css">
+	<title>Deez Designs Login</title> <!-- This is used for welcome name on the tab -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head> 
+<body>
+	<div id="container"><!-- use the header area for the name or logo-->
+	
+	<header><!-- use the header area for the name or logo-->
+	<nav class="navbar">
+        <a href="index.html"><!-- check to see what the acutal anchor is going to be--> <!-- HTML5 semantic elements --> 
+			<img src="IMAGES/DWDlogo.png" alt="Deez Website Designz logo" class="logo">
+		</a> 
+		
+		<button class="hamburger" id="hamburger">&#9776;</button>
+		
+	<ul class="nav-links" id="nav-links">
+	    <li><a href="webdesign.html">Webpage Design</a></li>
+		<li><a href="mobileapplication.html">Mobile Application Design</a></li>
+		<li><a href="contactus.html">Contact Us</a></li>
+	</ul>
+	<div class="social-icons"> <!-- will need to add the actual URL where the "#" is. also set a target="_blank" this keeps my site open -->
+		<a href="#" target="_blank"><img src="IMAGES/Facebook.png" alt="Facebook" class="social-icon-img"></a> 
+		<a href="#" target="_blank"><img src="IMAGES/Instagram.png" alt="Instagram" class="social-icon-img"></a>
+		<a href="#" target="_blank"><img src="IMAGES/linkedin.png" alt="Linkedin" class="social-icon-img"></a>
+		<a href="#" target="_blank"><img src="IMAGES/Twitter.png" alt="TwiX" class="social-icon-img"></a>
+	</div>
+	</nav>
+	
+</header> 
+</div>
+<main class="login-control">
+	<section class="login-box">
+		<h2>Welcome</h2>
+		<form id="loginForm">
+			<label for="username">Username or Email:</label>
+			<input type="text" id="username" name="username" required>
+		
+			<label for="password">Password:</label>
+			<input type="password" id="password" name="password" required>
+		
+			<button type="submit">Enter Here</button> <!-- here you will be redirected after successful login to the dashboard -->
+		</form>
+		<p id="login-message"></p>
+		<p class="login-links">
+			<a href="forgot-password.html">Forgot your password?</a> <!-- this needs to be set to handle password regenerations for users -->
+			<a href="registration.html">Create an Account</a>
+		</p>
+	</section>
+	
+</main>
+<footer> <!-- this is used for legal and copyrights and extra contact information -->
+		&copy; Copyright 2025. All rights reserved.
+		<br>
+		<a href="mailto:dubld@deezdesigns.com">dubld@deezdesigns.com</a> <!-- this is used to link an email address-->
+		<br>
+		<a href="tel:___">Contact us today</a> <!-- this is used to anchor a phone number-->
+		
+</footer> 
+<script src="scripts/database.js"></script>
+<script src="scripts/login.js"></script>
+	
+</body>
+</html>
