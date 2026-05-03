@@ -1,5 +1,5 @@
 .resume {
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 8rem 1.5rem;
   color: #e2e8f0;
@@ -65,9 +65,32 @@
 
 .skills-grid span {
   background: #1e293b;
+  color: #f0f0f0;
   padding: 0.4rem 0.8rem;
   border-radius: 6px;
   font-size: 0.85rem;
+  transition: all 0.25s ease;
+  display: inline-block;
+}
+
+/* Skills Hover effect */
+.skills-grid span:hover {
+  background: #f3f1f1;
+  color: #1e293b; /* dark text for contrast */
+  transform: translateY(-4px);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+              0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+/* Skills Subtle bounce animation */
+.skills-grid span:hover {
+  animation: bounce 0.3s ease;
+}
+
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-6px); }
+  100% { transform: translateY(-4px); }
 }
 
 /* JOBS */
@@ -102,6 +125,7 @@
 .project h3 a:hover {
   text-decoration: underline;
 }
+
 /* Resume download */ 
 .resume-download {
     display: inline-block;
@@ -120,4 +144,50 @@
     color: #0f172a;
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(56, 189, 248, 0.25);
+}
+
+/* Section Divider */
+
+.section-divider {
+  border: none;
+  height: 3px;
+  width: 400px;
+  margin: 2rem auto;
+  border-radius: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.9),
+    transparent
+  );
+
+  animation: breathe-line 4s ease-in-out infinite;
+}
+
+/* subtle glow Section Divider*/
+.section-divider::after {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+@keyframes breathe-line {
+  0% {
+    transform: scaleX(0.9);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: scaleX(1.1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scaleX(0.9);
+    opacity: 0.6;
+  }
 }

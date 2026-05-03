@@ -1,10 +1,38 @@
-/* RESET */
+/* style-base.css for douglas-portfolio */
+/* This is what comes only 6 months from graduation */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+.site-header {
+    width: 100%;
+    background-color: #0f172a; /* found that this is a dark professional navy */
+    color: #ffffff;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
 
+.header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.brand-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: opacity 0.2s ease;
+}
+
+.brand-text:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
 body {
     font-family: 'Segoe UI', sans-serif;
     padding-top: 80px;
@@ -24,13 +52,13 @@ body {
 
 .hero-content h1 {
     font-size: 3rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     animation: fadeIn 1s ease forwards;
 }
 
 .hero-content p {
     font-size: 1.2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
     opacity: 0;
     animation: fadeIn 1.5s ease forwards;
     color: #38bdf8;
@@ -80,7 +108,7 @@ body {
   padding: 40px 0;
   padding-right: 40px;
   gap: 20px;
-  overflow: hidden;
+  overflow-x: scroll;
   scroll-snap-type: x mandatory;
 }
 
@@ -98,6 +126,9 @@ body {
     animation: fadeUp 0.8s ease forwards;
     flex: 0 0 calc(25% - 15px);
     scroll-snap-align: start;
+}
+.card h3 {
+  color:#38bdf8; 
 }
 .card a {
     
