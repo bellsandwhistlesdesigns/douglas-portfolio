@@ -1,0 +1,34 @@
+.case-study {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 100px 20px;
+  line-height: 1.6;
+}
+
+.case-study h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #94a3b8;
+  margin-bottom: 40px;
+}
+
+.case-section {
+  margin-bottom: 40px;
+}
+
+.case-section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  border-left: 4px solid #3b82f6;
+  padding-left: 10px;
+}
+
+.case-section ul {
+  padding-left: 20px;
+}
+
+.case-section li {
+  m

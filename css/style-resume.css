@@ -1,0 +1,123 @@
+.resume {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 8rem 1.5rem;
+  color: #e2e8f0;
+}
+
+/* HEADER */
+.resume-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.resume-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #38bdf8;
+  margin-bottom: 1rem;
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+.links {
+  margin-top: 1rem;
+}
+
+.links a {
+  margin: 0 0.5rem;
+  color: #cbd5f5;
+  text-decoration: none;
+}
+
+.links a:hover {
+  color: #38bdf8;
+}
+
+/* SECTIONS */
+.resume-section {
+  margin-bottom: 2.5rem;
+}
+
+.resume-section h2 {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  border-left: 3px solid #38bdf8;
+  padding-left: 0.5rem;
+}
+
+/* SKILLS */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skills-grid span {
+  background: #1e293b;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+/* JOBS */
+.job {
+  margin-bottom: 1.5rem;
+}
+
+.job-title {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin-bottom: 0.5rem;
+}
+
+.job ul {
+  padding-left: 1.2rem;
+}
+
+.job li {
+  margin-bottom: 0.3rem;
+}
+
+/* PROJECTS */
+.project {
+  margin-bottom: 1rem;
+}
+.project h3 a {
+  text-decoration: none;
+  color: #38bdf8;
+  cursor: pointer;
+}
+
+.project h3 a:hover {
+  text-decoration: underline;
+}
+/* Resume download */ 
+.resume-download {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    background: transparent;
+    color: #38bdf8;
+    border: 1px solid #38bdf8;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.25s ease;
+}
+.resume-download:hover {
+    background: #38bdf8;
+    color: #0f172a;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(56, 189, 248, 0.25);
+}

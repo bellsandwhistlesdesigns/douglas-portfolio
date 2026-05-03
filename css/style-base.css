@@ -1,0 +1,381 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    padding-top: 80px;
+    background: #0f172a;
+    color: #e2e8f0;
+}
+
+/* HERO */
+.hero {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    animation: fadeIn 1s ease forwards;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: fadeIn 1.5s ease forwards;
+    color: #38bdf8;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid #38bdf8;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.25s ease;
+}
+
+.btn:hover {
+    background: #38bdf8;
+    color: #0f172a;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(56, 189, 248, 0.25);
+
+}
+
+/* PROJECTS */
+.projects {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.projects h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+.projects-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+
+}
+/* CARDS */
+.card-container {
+  display: flex;
+  padding: 40px 0;
+  padding-right: 40px;
+  gap: 20px;
+  overflow: hidden;
+  scroll-snap-type: x mandatory;
+}
+
+.card-container::-webkit-scrollbar {
+  display: none; /* Chrome */
+}
+.card {
+    background: #1e293b;
+    padding: 4rem;
+    width: 250px;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    cursor: pointer;
+    animation: fadeUp 0.8s ease forwards;
+    flex: 0 0 calc(25% - 15px);
+    scroll-snap-align: start;
+}
+.card a {
+    
+    display: block;
+    text-decoration: none;
+    color: white;
+}
+.card a p:last-of-type {
+  transition: color 0.2s ease;
+}
+
+.card a:hover p:last-of-type {
+  color: #38bdf8; 
+}
+.card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(156, 132, 23, 0.3);
+}
+.learn-more {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-top: 0.5rem;
+}
+.location {
+  font-size: 0.75rem;
+  color: #38bdf8;
+  margin-top: 0.2rem;
+  letter-spacing: 0.03em; /* slight polish */
+}
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.nav-btn.left {
+  left: 0;
+}
+
+.nav-btn.right {
+  right: 0;
+}
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2000;
+  background: solid;
+  transition: all 0.3s ease;
+}
+
+.site-header.scrolled {
+  background: rgb(15, 23, 42);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+body {
+  padding-top: 80px;
+}
+.site-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,215,0,0.8),
+    transparent
+  );
+}
+.site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: radial-gradient(
+    rgba(255,255,255,0.4) 1px,
+    transparent 1px
+  );
+
+  background-size: 40px 40px;
+  opacity: 0.05;
+
+  pointer-events: none;
+}
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  padding: 1.25rem 1.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* Brand container */
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+/* Your name */
+.brand-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+
+  color: #e2e8f0; /* same as hero text */
+
+  transition: color 0.3s ease;
+}
+
+/* Optional subtle accent on hover */
+.brand-text:hover {
+  color: #38bdf8; /* same accent as buttons */
+}
+
+/* subtle entrance animation */
+.brand-text {
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: slideFade 0.8s ease forwards;
+}
+
+@keyframes slideFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.site-footer {
+  margin-top: 4rem;
+  padding: 3rem 1.5rem;
+
+  background: linear-gradient(180deg, #0f172a, #020617);
+  color: #94a3b8;
+
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Keep alignment consistent with header */
+.footer-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Copyright text */
+.site-footer p {
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+}
+
+/* Links container */
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0;
+}
+
+/* Links */
+.footer-links a {
+  text-decoration: none;
+  color: #cbd5f5;
+  font-size: 0.95rem;
+
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+/* Underline animation */
+.footer-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+
+  width: 0%;
+  height: 2px;
+
+  background: #38bdf8;
+  transition: width 0.25s ease;
+}
+
+/* Hover effects */
+.footer-links a:hover {
+  color: #38bdf8;
+}
+
+.footer-links a:hover::after {
+  width: 100%;
+}
+.post-nav {
+  margin-top: 3rem;
+  text-align: left;
+}
+
+.back-link {
+  display: inline-block;
+  font-weight: 600;
+  text-decoration: none;
+  color: #ffffff;
+}
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.nav-btn.left {
+  left: 0;
+}
+
+.nav-btn.right {
+  right: 0;
+}
+
+
+@media (max-width: 900px) {
+  .card {
+    flex: 0 0 calc(50% - 10px); /* 2 cards */
+  }
+}
+
+@media (max-width: 500px) {
+  .card {
+    flex: 0 0 100%; /* 1 card */
+  }
+}
