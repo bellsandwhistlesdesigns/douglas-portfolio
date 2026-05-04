@@ -145,7 +145,9 @@ body {
     display: block;
     text-decoration: none;
     color: white;
+    
 }
+
 .card a p:last-of-type {
   transition: color 0.2s ease;
 }
@@ -167,12 +169,14 @@ body {
   font-size: 0.85rem;
   opacity: 0.8;
   margin-top: 0.5rem;
+  
 }
 .location {
   font-size: 0.8rem;
   color: #38bdf8;
   margin-top: 0.2rem;
   letter-spacing: 0.03em; /* slight polish */
+  margin-bottom: 2rem;
 }
 .nav-btn {
   position: absolute;
