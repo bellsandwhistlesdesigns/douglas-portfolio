@@ -420,7 +420,7 @@ body {
 
 @media (max-width: 500px) {
   .card {
-    flex: 0 0 100%; /* 1 card */
+    flex: 0 0 80%; /* 1 card */
   }
   .card h3 {
     font-size: 1rem;
