@@ -163,7 +163,7 @@ body {
 }
 .card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(156, 132, 23, 0.3);
+    box-shadow: 0 15px 30px rgba(245, 205, 29, 0.3);
 }
 .learn-more {
   font-size: 0.85rem;
