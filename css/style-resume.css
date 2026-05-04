@@ -13,12 +13,13 @@
 
 .resume-header h1 {
   font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 2rem;
 }
 
 .subtitle {
   color: #38bdf8;
   margin-bottom: 1rem;
+  font-size: 2rem;
 }
 
 .contact {
@@ -146,48 +147,3 @@
     box-shadow: 0 10px 20px rgba(56, 189, 248, 0.25);
 }
 
-/* Section Divider */
-
-.section-divider {
-  border: none;
-  height: 3px;
-  width: 400px;
-  margin: 2rem auto;
-  border-radius: 2px;
-
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.9),
-    transparent
-  );
-
-  animation: breathe-line 4s ease-in-out infinite;
-}
-
-/* subtle glow Section Divider*/
-.section-divider::after {
-  content: "";
-  display: block;
-  height: 100%;
-  width: 100%;
-  border-radius: 2px;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
-}
-
-@keyframes breathe-line {
-  0% {
-    transform: scaleX(0.9);
-    opacity: 0.6;
-  }
-
-  50% {
-    transform: scaleX(1.1);
-    opacity: 1;
-  }
-
-  100% {
-    transform: scaleX(0.9);
-    opacity: 0.6;
-  }
-}

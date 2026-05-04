@@ -1,4 +1,4 @@
-console.log("carousel.js loaded");
+console.log("leftandright.js loaded");
 
 const container = document.querySelector('.card-container');
 const cards = document.querySelectorAll('.card');
@@ -6,65 +6,109 @@ const leftBtn = document.querySelector('.nav-btn.left');
 const rightBtn = document.querySelector('.nav-btn.right');
 
 const cardCount = cards.length;
+let currentIndex = 0;
+let autoScrollInterval = null;
 
-// Clone cards for infinite loop
+// ----------------------------------------------------
+// 1. Clone cards for seamless loop
+// ----------------------------------------------------
 cards.forEach(card => {
-  container.appendChild(card.cloneNode(true));
+  const clone = card.cloneNode(true);
+  container.appendChild(clone);
 });
 
-// ----------------------------------------------------
-// CONFIG (THIS controls “Apple feel”)
-// ----------------------------------------------------
-let speed = 1.5; //  lower = slower (0.2–1.0 range feels best)
-let position = 0;
-let cardWidth = cards[0].offsetWidth + 20;
+// Now we scroll through 2 sets of cards:
+// [0 - cardCount - 1] original
+// [cardCount - 2*cardCount - 1] clone
 
 // ----------------------------------------------------
-// Infinite animation loop (Apple-style)
+// 2. Scroll function
 // ----------------------------------------------------
-function animate() {
-  position += speed;
+function scrollToIndex(index, smooth = true) {
+  const cardWidth = cards[0].offsetWidth + 20;
 
-  container.scrollLeft = position;
-
-  // reset seamlessly when reaching half (original set end)
-  if (position >= cardWidth * cardCount) {
-    position = 0;
-    container.scrollLeft = 0;
-  }
-
-  requestAnimationFrame(animate);
+  container.scrollTo({
+    left: cardWidth * index,
+    behavior: smooth ? 'smooth' : 'auto'
+  });
 }
 
 // ----------------------------------------------------
-// Controls (optional manual override)
+// 3. Handle infinite reset (no visible jump)
+// ----------------------------------------------------
+function handleLoopReset() {
+  const cardWidth = cards[0].offsetWidth + 20;
+
+  // If we've moved into cloned section
+  if (currentIndex >= cardCount) {
+    setTimeout(() => {
+      container.scrollTo({
+        left: 0,
+        behavior: 'auto'
+      });
+      currentIndex = 0;
+    }, 400);
+  }
+
+  // If we go backwards past start
+  if (currentIndex < 0) {
+    container.scrollTo({
+      left: cardWidth * (cardCount - 1),
+      behavior: 'auto'
+    });
+    currentIndex = cardCount - 1;
+  }
+}
+
+// ----------------------------------------------------
+// 4. Controls
 // ----------------------------------------------------
 function goRight() {
-  position += cardWidth;
-  container.scrollLeft = position;
+  currentIndex++;
+  scrollToIndex(currentIndex);
+  handleLoopReset();
 }
 
 function goLeft() {
-  position -= cardWidth;
-  container.scrollLeft = position;
+  currentIndex--;
+  scrollToIndex(currentIndex);
+  handleLoopReset();
 }
 
 // Buttons
-rightBtn.addEventListener('click', goRight);
-leftBtn.addEventListener('click', goLeft);
-
-// ----------------------------------------------------
-// Pause on hover (Apple behavior)
-// ----------------------------------------------------
-container.addEventListener('mouseenter', () => {
-  speed = 0;
+rightBtn.addEventListener('click', () => {
+  goRight();
+  resetAutoScroll();
 });
 
-container.addEventListener('mouseleave', () => {
-  speed = 0.5; // resume motion
+leftBtn.addEventListener('click', () => {
+  goLeft();
+  resetAutoScroll();
 });
 
 // ----------------------------------------------------
-// Start animation
+// 5. Auto scroll
 // ----------------------------------------------------
-animate();
+function startAutoScroll() {
+  autoScrollInterval = setInterval(() => {
+    goRight();
+  }, 7000);
+}
+
+function stopAutoScroll() {
+  clearInterval(autoScrollInterval);
+}
+
+function resetAutoScroll() {
+  stopAutoScroll();
+  startAutoScroll();
+}
+
+// Pause on hover
+container.addEventListener('mouseenter', stopAutoScroll);
+container.addEventListener('mouseleave', startAutoScroll);
+
+// ----------------------------------------------------
+// 6. Start
+// ----------------------------------------------------
+startAutoScroll();
