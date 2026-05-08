@@ -379,6 +379,27 @@ body {
 .footer-links a:hover::after {
   width: 100%;
 }
+.footer-icons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.footer-icons a {
+  color: #e2e8f0;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-icons a:hover {
+  color: #38bdf8;
+  transform: translateY(-2px);
+}
+
+.footer-icons i {
+  width: 20px;
+  height: 20px;
+}
 .post-nav {
   margin-top: 3rem;
   text-align: left;
