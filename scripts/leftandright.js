@@ -1,114 +1,186 @@
 console.log("leftandright.js loaded");
 
-const container = document.querySelector('.card-container');
-const cards = document.querySelectorAll('.card');
-const leftBtn = document.querySelector('.nav-btn.left');
-const rightBtn = document.querySelector('.nav-btn.right');
+const sliders = document.querySelectorAll('.projects-wrapper');
 
-const cardCount = cards.length;
-let currentIndex = 0;
-let autoScrollInterval = null;
+sliders.forEach((slider) => {
 
-// ----------------------------------------------------
-// 1. Clone cards for seamless loop
-// ----------------------------------------------------
-cards.forEach(card => {
-  const clone = card.cloneNode(true);
-  container.appendChild(clone);
-});
+    const section = slider.closest('section');
 
-// Now we scroll through 2 sets of cards:
-// [0 - cardCount - 1] original
-// [cardCount - 2*cardCount - 1] clone
+    const isLooping = section.classList.contains('loop-slider');
 
-// ----------------------------------------------------
-// 2. Scroll function
-// ----------------------------------------------------
-function scrollToIndex(index, smooth = true) {
-  const cardWidth = cards[0].offsetWidth + 20;
+    const container = slider.querySelector('.card-container');
+    const cards = slider.querySelectorAll('.card, .card-contributions');
 
-  container.scrollTo({
-    left: cardWidth * index,
-    behavior: smooth ? 'smooth' : 'auto'
-  });
-}
+    const leftBtn = slider.querySelector('.nav-btn.left');
+    const rightBtn = slider.querySelector('.nav-btn.right');
 
-// ----------------------------------------------------
-// 3. Handle infinite reset (no visible jump)
-// ----------------------------------------------------
-function handleLoopReset() {
-  const cardWidth = cards[0].offsetWidth + 20;
+    const cardCount = cards.length;
 
-  // If we've moved into cloned section
-  if (currentIndex >= cardCount) {
-    setTimeout(() => {
-      container.scrollTo({
-        left: 0,
-        behavior: 'auto'
-      });
-      currentIndex = 0;
-    }, 400);
-  }
+    let currentIndex = 0;
+    let autoScrollInterval = null;
 
-  // If we go backwards past start
-  if (currentIndex < 0) {
-    container.scrollTo({
-      left: cardWidth * (cardCount - 1),
-      behavior: 'auto'
+    // ----------------------------------------
+    // Clone cards ONLY for looping sliders
+    // ----------------------------------------
+    if (isLooping) {
+
+        cards.forEach(card => {
+
+            const clone = card.cloneNode(true);
+
+            container.appendChild(clone);
+
+        });
+    }
+
+    // ----------------------------------------
+    // Scroll to card
+    // ----------------------------------------
+    function scrollToIndex(index, smooth = true) {
+
+        const cardWidth = cards[0].offsetWidth + 20;
+
+        container.scrollTo({
+            left: cardWidth * index,
+            behavior: smooth ? 'smooth' : 'auto'
+        });
+    }
+
+    // ----------------------------------------
+    // Infinite loop reset
+    // ----------------------------------------
+    function handleLoopReset() {
+
+        const cardWidth = cards[0].offsetWidth + 20;
+
+        // End reached → reset to start
+        if (currentIndex >= cardCount) {
+
+            setTimeout(() => {
+
+                container.scrollTo({
+                    left: 0,
+                    behavior: 'auto'
+                });
+
+                currentIndex = 0;
+
+            }, 400);
+        }
+
+        // Start reached → jump to end
+        if (currentIndex < 0) {
+
+            container.scrollTo({
+                left: cardWidth * (cardCount - 1),
+                behavior: 'auto'
+            });
+
+            currentIndex = cardCount - 1;
+        }
+    }
+
+    // ----------------------------------------
+    // RIGHT
+    // ----------------------------------------
+    function goRight() {
+
+    // FEATURED LOOPING SECTION
+    if (isLooping) {
+
+        currentIndex++;
+
+        scrollToIndex(currentIndex);
+
+        handleLoopReset();
+
+        return;
+    }
+
+    // CONTRIBUTIONS SECTION
+    currentIndex = (currentIndex + 1) % cardCount;
+
+    scrollToIndex(currentIndex);
+    }
+
+    // ----------------------------------------
+    // LEFT
+    // ----------------------------------------
+    function goLeft() {
+
+    // FEATURED LOOPING SECTION
+    if (isLooping) {
+
+        currentIndex--;
+
+        scrollToIndex(currentIndex);
+
+        handleLoopReset();
+
+        return;
+    }
+
+    // CONTRIBUTIONS SECTION
+    currentIndex = (currentIndex - 1 + cardCount) % cardCount;
+
+    scrollToIndex(currentIndex);
+    }
+
+    // ----------------------------------------
+    // Button Events
+    // ----------------------------------------
+    rightBtn.addEventListener('click', () => {
+
+        goRight();
+
+        if (isLooping) {
+            resetAutoScroll();
+        }
     });
-    currentIndex = cardCount - 1;
-  }
-}
 
-// ----------------------------------------------------
-// 4. Controls
-// ----------------------------------------------------
-function goRight() {
-  currentIndex++;
-  scrollToIndex(currentIndex);
-  handleLoopReset();
-}
+    leftBtn.addEventListener('click', () => {
 
-function goLeft() {
-  currentIndex--;
-  scrollToIndex(currentIndex);
-  handleLoopReset();
-}
+        goLeft();
 
-// Buttons
-rightBtn.addEventListener('click', () => {
-  goRight();
-  resetAutoScroll();
+        if (isLooping) {
+            resetAutoScroll();
+        }
+    });
+
+    // ----------------------------------------
+    // Auto Scroll
+    // ----------------------------------------
+    function startAutoScroll() {
+
+        autoScrollInterval = setInterval(() => {
+
+            goRight();
+
+        }, 7000);
+    }
+
+    function stopAutoScroll() {
+
+        clearInterval(autoScrollInterval);
+    }
+
+    function resetAutoScroll() {
+
+        stopAutoScroll();
+
+        startAutoScroll();
+    }
+
+    // ----------------------------------------
+    // Hover Pause ONLY for looping sliders
+    // ----------------------------------------
+    if (isLooping) {
+
+        container.addEventListener('mouseenter', stopAutoScroll);
+
+        container.addEventListener('mouseleave', startAutoScroll);
+
+        startAutoScroll();
+    }
+
 });
-
-leftBtn.addEventListener('click', () => {
-  goLeft();
-  resetAutoScroll();
-});
-
-// ----------------------------------------------------
-// 5. Auto scroll
-// ----------------------------------------------------
-function startAutoScroll() {
-  autoScrollInterval = setInterval(() => {
-    goRight();
-  }, 7000);
-}
-
-function stopAutoScroll() {
-  clearInterval(autoScrollInterval);
-}
-
-function resetAutoScroll() {
-  stopAutoScroll();
-  startAutoScroll();
-}
-
-// Pause on hover
-container.addEventListener('mouseenter', stopAutoScroll);
-container.addEventListener('mouseleave', startAutoScroll);
-
-// ----------------------------------------------------
-// 6. Start
-// ----------------------------------------------------
-startAutoScroll();
