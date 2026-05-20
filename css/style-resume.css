@@ -45,16 +45,51 @@
   color: #38bdf8;
 }
 
-/* SECTIONS */
+/* -------------------------------- */
+/* RESUME SECTION */
+/* -------------------------------- */
+
 .resume-section {
-  margin-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
 }
 
 .resume-section h2 {
-  margin-bottom: 1rem;
-  font-size: 1.4rem;
-  border-left: 3px solid #38bdf8;
-  padding-left: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    border-left: 3px solid #38bdf8;
+    padding-left: 0.5rem;
+}
+
+/* -------------------------------- */
+/* EDUCATION ITEM */
+/* -------------------------------- */
+
+.education-item {
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+    border-left: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.education-item h3 {
+    color: #e2e8f0;
+    font-size: 1.05rem;
+    margin-bottom: 0.35rem;
+    line-height: 1.4;
+}
+
+/* DATE */
+.education-meta {
+    color: #38bdf8;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.03em;
+}
+
+/* FIELDS OF STUDY */
+.field-study {
+    color: #cbd5e1;
+    line-height: 1.7;
+    font-size: 0.95rem;
 }
 
 /* SKILLS */
