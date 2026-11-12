@@ -626,3 +626,26 @@ body {
     opacity: 0.9;
   }
 }
+/* SOFTWARE DEVELOPMENT PROJECT CARDS */
+
+#software-projects .software-cards .card {
+    flex: 0 0 calc(25% - 15px);
+    padding: 2rem 1rem;
+    min-width: 0;
+}
+
+#software-projects .software-cards {
+    width: 100%;
+}
+
+@media (max-width: 900px) {
+    #software-projects .software-cards .card {
+        flex: 0 0 calc(50% - 10px);
+    }
+}
+
+@media (max-width: 500px) {
+    #software-projects .software-cards .card {
+        flex: 0 0 80%;
+    }
+}

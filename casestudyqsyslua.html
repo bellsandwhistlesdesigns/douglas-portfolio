@@ -1,0 +1,499 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Q-SYS Lua Learning Case Study | Douglas Moth</title>
+
+    <meta name="description"
+          content="Explore Q-SYS Lua Learning, an independent programming project featuring multi-room AV control simulation, event-driven architecture, scene automation, and a simulated TCP projector driver.">
+
+    <link rel="icon" type="image/png" sizes="16x16"
+          href="images/favicon_io/favicon-16x16.png">
+
+    <link rel="icon" type="image/png" sizes="32x32"
+          href="images/favicon_io/favicon-32x32.png">
+
+    <link rel="stylesheet" href="css/style-base.css">
+    <link rel="stylesheet" href="css/style-casestudy.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+    <div class="header-inner">
+        <div class="brand">
+            <span class="brand-text">
+                Q-SYS Lua Learning | Software Development
+            </span>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="case-study">
+
+        <h1>Q-SYS Lua Learning</h1>
+
+        <p class="subtitle">
+            Lua Programming | AV Control Systems |
+            Event-Driven Architecture & Driver Simulation
+        </p>
+
+        <!-- OVERVIEW -->
+        <div class="case-section">
+            <h2>Overview</h2>
+
+            <p>
+                Q-SYS Lua Learning is an independent
+                programming initiative created to explore
+                Lua scripting and software-driven audiovisual
+                control systems.
+            </p>
+
+            <p>
+                Building on my professional background in
+                commercial AV systems integration, the
+                project provided an opportunity to connect
+                practical equipment knowledge with software
+                development concepts, including event-driven
+                programming, state management, modular
+                architecture, and device communication.
+            </p>
+
+            <p>
+                The repository contains programming
+                exercises and simulation projects,
+                including a multi-room AV control system
+                and a simulated TCP projector driver.
+            </p>
+        </div>
+
+        <!-- MY ROLE -->
+        <div class="case-section">
+            <h2>My Role</h2>
+
+            <ul>
+                <li>
+                    Independent developer and
+                    project creator
+                </li>
+                <li>
+                    Lua scripting and application logic
+                </li>
+                <li>
+                    AV control system architecture
+                </li>
+                <li>
+                    Event routing and device-state management
+                </li>
+                <li>
+                    Scene automation development
+                </li>
+                <li>
+                    Simulated projector driver development
+                </li>
+                <li>
+                    Testing, debugging, and documentation
+                </li>
+                <li>
+                    GitHub repository management
+                </li>
+            </ul>
+        </div>
+
+        <!-- TECHNOLOGY STACK -->
+        <div class="case-section">
+            <h2>Technology Stack</h2>
+
+            <ul>
+                <li>Lua programming language</li>
+                <li>Lua tables and functions</li>
+                <li>Event-driven programming</li>
+                <li>State-based application architecture</li>
+                <li>Data-driven scene configuration</li>
+                <li>TCP command and response simulation</li>
+                <li>String parsing and formatting</li>
+                <li>Console-based testing and logging</li>
+                <li>Git and GitHub</li>
+            </ul>
+        </div>
+
+        <!-- MULTI-ROOM CONTROL SYSTEM -->
+        <div class="case-section">
+            <h2>Multi-Room AV Control System</h2>
+
+            <p>
+                Developed a simulated AV control
+                architecture capable of managing
+                multiple independent rooms.
+            </p>
+
+            <p>
+                Version 3.1 models four spaces:
+                a boardroom, huddle space, theatre,
+                and front desk.
+            </p>
+
+            <p>
+                Each room maintains its own equipment
+                state, including:
+            </p>
+
+            <ul>
+                <li>Projector and display power</li>
+                <li>Camera operation</li>
+                <li>Microphone mute status</li>
+                <li>Audio volume levels</li>
+                <li>Projection screen position</li>
+                <li>Lighting and door states</li>
+            </ul>
+
+            <p>
+                A reusable room factory initializes
+                room objects with a consistent state
+                structure, while the device layer
+                provides common methods for updating
+                equipment settings.
+            </p>
+        </div>
+
+        <!-- EVENT-DRIVEN ARCHITECTURE -->
+        <div class="case-section">
+            <h2>Event-Driven Architecture</h2>
+
+            <p>
+                The control system uses an event-driven
+                architecture to separate simulated
+                physical inputs from application logic.
+            </p>
+
+            <p>
+                Button identifiers are mapped to
+                logical events. An event bus dispatches
+                those events to handlers responsible
+                for updating the appropriate room
+                and equipment state.
+            </p>
+
+            <p>
+                This design demonstrates separation
+                of responsibilities between user input,
+                event routing, control logic,
+                and state presentation.
+            </p>
+        </div>
+
+        <!-- SCENE AUTOMATION -->
+        <div class="case-section">
+            <h2>Data-Driven Scene Automation</h2>
+
+            <p>
+                Implemented a reusable scene engine
+                that applies predefined equipment
+                configurations to individual rooms.
+            </p>
+
+            <p>
+                Scenes are represented as collections
+                of actions rather than separate,
+                hard-coded control procedures.
+            </p>
+
+            <ul>
+                <li>
+                    <strong>Presentation Mode:</strong>
+                    Configures projection, camera,
+                    microphone, lighting, and audio.
+                </li>
+
+                <li>
+                    <strong>Video Conference Mode:</strong>
+                    Configures display, camera,
+                    microphone, and audio settings.
+                </li>
+
+                <li>
+                    <strong>Front Office Mode:</strong>
+                    Applies settings appropriate
+                    for a reception area.
+                </li>
+
+                <li>
+                    <strong>Shutdown Mode:</strong>
+                    Returns controlled equipment
+                    to predefined shutdown states.
+                </li>
+            </ul>
+
+            <p>
+                The scene engine interprets actions
+                such as setting values, toggling
+                states, and adjusting volume.
+            </p>
+        </div>
+
+        <!-- OPERATIONS DASHBOARD -->
+        <div class="case-section">
+            <h2>Operations Dashboard & State Monitoring</h2>
+
+            <p>
+                Created a console-based operations
+                dashboard that displays the current
+                equipment state of each simulated room.
+            </p>
+
+            <p>
+                The dashboard presents projector,
+                display, camera, lighting, door,
+                volume, screen, and microphone status
+                in a structured table.
+            </p>
+
+            <p>
+                Event execution triggers dashboard
+                rendering, allowing state changes
+                to be observed during simulation tests.
+            </p>
+        </div>
+
+        <!-- PROJECTOR DRIVER -->
+        <div class="case-section">
+            <h2>Simulated TCP Projector Driver</h2>
+
+            <p>
+                Developed a separate Lua project to
+                explore the architecture of a
+                network-controlled projector driver.
+            </p>
+
+            <p>
+                The simulation models a projector
+                connection, command transmission,
+                response handling, and device feedback.
+            </p>
+
+            <ul>
+                <li>
+                    Simulated connection and
+                    disconnection functions
+                </li>
+
+                <li>
+                    Power on and power off commands
+                </li>
+
+                <li>
+                    Input selection and volume control
+                </li>
+
+                <li>
+                    Mute-state management
+                </li>
+
+                <li>
+                    Parsing of power, input,
+                    temperature, and lamp-hour feedback
+                </li>
+
+                <li>
+                    Connection-state checks before
+                    executing control commands
+                </li>
+
+                <li>
+                    Console-based status reporting
+                    and functional tests
+                </li>
+            </ul>
+
+            <p>
+                The current implementation simulates
+                command transmission and device responses.
+                It does not establish a live TCP connection
+                to physical projector hardware.
+            </p>
+        </div>
+
+        <!-- BRIDGING CAREERS -->
+        <div class="case-section">
+            <h2>
+                Bridging AV Systems Integration
+                and Software Development
+            </h2>
+
+            <p>
+                This project represents a natural
+                connection between my previous
+                technical career and my continued
+                development as a software programmer.
+            </p>
+
+            <p>
+                My experience delivering commercial
+                audiovisual systems provided familiarity
+                with equipment behaviour, room-control
+                workflows, and systems integration.
+            </p>
+
+            <p>
+                Developing these simulations allowed
+                me to explore how those familiar
+                technical requirements can be
+                represented through software
+                architecture, event handling,
+                and programmable control logic.
+            </p>
+        </div>
+
+        <!-- CHALLENGES -->
+        <div class="case-section">
+            <h2>Challenges & Technical Growth</h2>
+
+            <ul>
+                <li>
+                    <strong>Learning Lua:</strong>
+                    Applied programming fundamentals
+                    through practical control-system
+                    simulations.
+                </li>
+
+                <li>
+                    <strong>System Architecture:</strong>
+                    Organized room management, event
+                    routing, device operations,
+                    and scene execution into
+                    separate components.
+                </li>
+
+                <li>
+                    <strong>State Management:</strong>
+                    Maintained independent equipment
+                    states across multiple rooms.
+                </li>
+
+                <li>
+                    <strong>Protocol Simulation:</strong>
+                    Explored command formatting,
+                    response parsing, and
+                    device-feedback handling.
+                </li>
+
+                <li>
+                    <strong>Testing:</strong>
+                    Used scripted scenarios and
+                    console output to observe
+                    application behaviour.
+                </li>
+            </ul>
+        </div>
+
+        <!-- OUTCOME -->
+        <div class="case-section">
+            <h2>Outcome</h2>
+
+            <p>
+                Created a documented collection of
+                Lua programming exercises and
+                AV control simulations demonstrating
+                event-driven application design,
+                reusable control logic, scene automation,
+                and simulated device communication.
+            </p>
+
+            <p>
+                The project strengthened my ability
+                to translate real-world technical
+                requirements into software structures
+                and programming workflows.
+            </p>
+
+            <p>
+                It also demonstrates how my background
+                in systems integration continues to
+                inform my approach to software
+                development and technical
+                problem-solving.
+            </p>
+        </div>
+
+        <!-- SOURCE CODE -->
+        <div class="case-section">
+            <h2>Source Code & Documentation</h2>
+
+            <p>
+                <strong>GitHub Repository:</strong>
+                <a href="https://github.com/bellsandwhistlesdesigns/QSYS-Lua-Learning"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Explore Q-SYS Lua Learning
+                </a>
+            </p>
+
+            <p>
+                The repository contains documented
+                programming exercises and source
+                code for the AV control simulations.
+            </p>
+        </div>
+
+        <!-- BACK NAVIGATION -->
+        <nav class="post-nav">
+            <a href="index.html" class="back-link">
+                ← Back to Portfolio
+            </a>
+        </nav>
+
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-content">
+
+        <p>© 2026 Douglas James Moth</p>
+
+        <div class="footer-icons">
+
+            <a href="https://www.linkedin.com/in/douglasmoth"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+
+            <a href="https://github.com/bellsandwhistlesdesigns/bellsandwhistlesdesigns.github.io"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="GitHub">
+                <i class="fa-brands fa-github"></i>
+            </a>
+
+            <a href="https://www.tasknova.ca"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="TaskNova">
+                <i class="fa-solid fa-globe"></i>
+            </a>
+
+            <a href="usage.html"
+               aria-label="Terms of Use">
+                <i class="fa-regular fa-file-lines"></i>
+            </a>
+
+        </div>
+    </div>
+</footer>
+
+<script src="scripts/scroll.js"></script>
+
+</body>
+</html>

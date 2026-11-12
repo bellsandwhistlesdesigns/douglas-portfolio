@@ -33,3 +33,12 @@
 .case-section li {
   margin-bottom: 8px;
 }
+.case-section a {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.case-section a:hover {
+    text-decoration: underline;
+}
